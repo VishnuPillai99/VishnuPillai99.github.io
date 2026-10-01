@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TrackEats Privacy Policy</title>
+<meta name="description" content="Privacy policy for the TrackEats Android app.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1c1b22;
+    --muted: #55535e;
+    --rule: #e2e0ea;
+    --accent: #5b3fd6;
+    --card: #f7f6fc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141318;
+      --fg: #eceaf2;
+      --muted: #a9a6b4;
+      --rule: #2e2c36;
+      --accent: #b3a4ff;
+      --card: #1d1c23;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141318;
+    --fg: #eceaf2;
+    --muted: #a9a6b4;
+    --rule: #2e2c36;
+    --accent: #b3a4ff;
+    --card: #1d1c23;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 3rem 16px 5rem; }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .25rem; }
+  h2 { font-size: 1.25rem; margin: 2.5rem 0 .5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+  h3 { font-size: 1.02rem; margin: 1.5rem 0 .4rem; }
+  p, li { color: var(--fg); }
+  .updated { color: var(--muted); margin: 0 0 2rem; font-size: .9rem; }
+  .lede { color: var(--muted); }
+  a { color: var(--accent); }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { text-align: left; vertical-align: top; padding: .5rem .6rem; border-bottom: 1px solid var(--rule); }
+  th { color: var(--muted); font-weight: 600; }
+  .card { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 1rem 1.1rem; margin: 1.25rem 0; }
+  .card p:first-child { margin-top: 0; }
+  .card p:last-child { margin-bottom: 0; }
+  code { background: var(--card); padding: .1rem .3rem; border-radius: 4px; font-size: .9em; }
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem; }
+  @media (max-width: 480px) {
+    main { padding-top: 2rem; }
+    table, thead, tbody, th, td, tr { display: block; }
+    thead { display: none; }
+    td { border: none; padding: .15rem 0; }
+    tr { border-bottom: 1px solid var(--rule); padding: .6rem 0; }
+    td:first-child { font-weight: 600; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<h1>TrackEats — Privacy Policy</h1>
+<p class="updated">Last updated: 2 October 2026 &middot; Applies to TrackEats for Android (package <code>io.github.vishnupillai99.trackeats</code>)</p>
+
+<p class="lede">TrackEats estimates the calories and macronutrients in a meal. This policy
+describes what happens to your information. It is written to be accurate rather than
+reassuring: where something leaves your phone, it says so plainly.</p>
+
+<div class="card">
+  <p><strong>The short version</strong></p>
+  <p>TrackEats has no account and no TrackEats server. Your food log, photos, weight,
+  water, goals and profile are stored only on your phone.</p>
+  <p>Meal photos, food searches and any tips or diet plans you ask for are sent to
+  <strong>Google's Gemini API using an API key you create yourself</strong>. They do not
+  pass through any computer belonging to the developer of TrackEats.</p>
+  <p>Uninstalling the app deletes everything, permanently. There is no backup and nobody —
+  including the developer — can recover it.</p>
+</div>
+
+<h2>Who is responsible</h2>
+<p>TrackEats is published by an independent developer. Questions about this policy, or
+about your data, go to <strong>vipillainewai99@gmail.com</strong>. This is the only contact route,
+and it is checked.</p>
+
+<h2>What is stored on your phone</h2>
+<p>All of the following is held in the app's own private storage on the device. TrackEats
+does not transmit any of it, because there is nowhere for it to be sent.</p>
+
+<table>
+  <thead><tr><th>Data</th><th>Why it exists</th></tr></thead>
+  <tbody>
+    <tr><td>Meals, foods, portions, calories and macros</td><td>Your food log</td></tr>
+    <tr><td>Meal photographs</td><td>Shown beside each logged meal</td></tr>
+    <tr><td>Weight entries</td><td>The weight chart and progress figures</td></tr>
+    <tr><td>Water counts</td><td>The daily water tracker</td></tr>
+    <tr><td>Height, age, sex, activity level, dietary preferences, goal</td><td>Calculating your calorie target, BMI, BMR and TDEE</td></tr>
+    <tr><td>Display name and avatar image</td><td>Shown in the app's own header</td></tr>
+    <tr><td>Daily step count read from Health Connect</td><td>The steps card on the Home screen</td></tr>
+    <tr><td>Reminder times</td><td>Local notifications, scheduled by your phone</td></tr>
+    <tr><td>Your Gemini API key</td><td>Held in Android's keystore (<em>not</em> ordinary app storage) so the app can call Google on your behalf</td></tr>
+  </tbody>
+</table>
+
+<p>There is no analytics SDK, no crash reporter, no advertising, no tracking of any kind,
+and no third-party software development kit that collects information about you.</p>
+
+<h2>What leaves your phone</h2>
+
+<h3>1. Meal photographs, sent to Google</h3>
+<p>When you photograph a meal — or pick an existing photo — the image is sent to
+<strong>Google's Gemini API</strong> to be identified. The request contains the image and a
+short text instruction, and nothing else: no name, no weight, no goals, no history, and no
+identifier for you or your phone.</p>
+
+<h3>2. Food searches, sent to Google</h3>
+<p>Searching for a food by name sends the words you typed to the same Google API, so it can
+return nutrition figures for that food.</p>
+
+<h3>3. Health tips, diet plans and exercise suggestions, sent to Google</h3>
+<p>These three optional features are generated by the same Google API, and to produce
+anything useful they send the figures they are based on: <strong>your sex, age, height,
+weight, activity level, goal, calorie target, your recent average calorie intake, and any
+dietary preferences you entered</strong>. Your name, your photos and your individual meals
+are not sent. If you would rather these figures never left the phone, do not use these
+three features — everything else in the app works without them.</p>
+
+<div class="card">
+  <p><strong>Your own key, and what Google may do with what it receives</strong></p>
+  <p>Every request above is authenticated with an API key that <em>you</em> created in
+  Google AI Studio and pasted into the app. Your use of the Gemini API is a matter between
+  you and Google, under Google's own terms, not ours:</p>
+  <p><a href="https://ai.google.dev/gemini-api/terms">Gemini API Additional Terms of Service</a>
+  &middot; <a href="https://policies.google.com/privacy">Google Privacy Policy</a></p>
+  <p>Note in particular that on Google's <strong>free (unpaid) tier</strong>, Google states
+  that it uses content submitted through the API to improve and develop Google's products
+  and machine-learning technologies, and that <strong>human reviewers may read, annotate
+  and process that content</strong>. Google's terms also advise not submitting sensitive,
+  confidential or personal information to the unpaid tier. TrackEats cannot change this,
+  cannot switch it off, and does not control it. If that is not acceptable to you, do not
+  use the photo, search, tips, plan or exercise features — barcode scanning and manual
+  entry never contact Google at all.</p>
+</div>
+
+<h3>4. Barcodes, sent to Open Food Facts</h3>
+<p>Scanning a barcode sends the barcode number — and nothing else — to
+<a href="https://world.openfoodfacts.org/">Open Food Facts</a>, a free public food
+database, to look up the product. No key, no account, nothing about you.
+<a href="https://world.openfoodfacts.org/privacy">Open Food Facts privacy policy</a>.</p>
+
+<h3>That is the complete list</h3>
+<p>Those four are every case in which TrackEats sends anything anywhere. There is no other
+network traffic and no TrackEats server to send it to.</p>
+
+<h2>Health Connect and your step count</h2>
+<p>If you allow it, TrackEats reads <strong>one</strong> thing from Android's Health
+Connect: your <strong>total step count for today</strong>. It is shown on the Home screen
+and stored on the phone with the rest of your log.</p>
+<ul>
+  <li>TrackEats never <em>writes</em> anything to Health Connect and reads no other data type.</li>
+  <li>Your step count is <strong>never transmitted</strong> — not to Google's Gemini API, not
+      to anyone. It is not included in tips, diet plans or exercise suggestions.</li>
+  <li>Step data is never used for advertising, never sold or transferred to anyone, and never
+      used to assess your employment, insurance or creditworthiness.</li>
+  <li>The permission is optional. The app works fully without it, and you can withdraw it at
+      any time in the Health Connect app or in Android <em>Settings → Health Connect → App
+      permissions → TrackEats</em>. Withdrawing it stops the card updating; step figures
+      already stored on the phone are removed when you clear the app's data or uninstall it.</li>
+</ul>
+
+<h2>Permissions the app requests</h2>
+<table>
+  <thead><tr><th>Permission</th><th>What it is for</th></tr></thead>
+  <tbody>
+    <tr><td>Camera</td><td>Photographing meals and scanning barcodes</td></tr>
+    <tr><td>Photos you choose</td><td>Picking an existing photo through Android's own photo picker, instead of taking one. TrackEats does not read your photo library</td></tr>
+    <tr><td>Internet</td><td>Reaching Google's Gemini API and Open Food Facts</td></tr>
+    <tr><td>Notifications and vibrate</td><td>Optional reminders. They are scheduled on your phone; no server sends them</td></tr>
+    <tr><td>Read steps (Health Connect)</td><td>Today's step count, as described above</td></tr>
+  </tbody>
+</table>
+<p>TrackEats does not request location, contacts, microphone, call logs, SMS, or access to
+device storage, and it explicitly blocks the microphone and draw-over-other-apps permissions
+so that no library it depends on can add them.</p>
+
+<h2>Children and age</h2>
+<p>TrackEats is not directed at children and is intended for adults. Calorie and weight
+guidance is not appropriate for children. In addition, Google's Gemini API terms — which
+you accept when you create the API key the app needs — require you to be 18 or older.</p>
+
+<h2>Your data: exporting and deleting it</h2>
+<ul>
+  <li><strong>Export</strong> — <em>Menu → Your data → Export my data</em> writes everything
+      out as a single JSON file you can save or send yourself. Your API key is not included
+      in the export.</li>
+  <li><strong>Delete everything</strong> — <em>Android Settings → Apps → TrackEats → Storage
+      → Clear storage</em>, or simply uninstall the app. Either removes your entire log,
+      your photos, your profile and your API key from the phone, irreversibly.</li>
+</ul>
+<p>There is no account to close and no server-side copy to request the deletion of, because
+neither exists. If you want your key to stop working for Google as well, delete it in
+<a href="https://aistudio.google.com/apikey">Google AI Studio</a>, which is outside
+TrackEats' control.</p>
+
+<h2>Security</h2>
+<p>Every request the app makes is over HTTPS. Your API key is stored with
+Android's keystore-backed secure storage rather than in ordinary app storage. Your log
+itself is held in the app's private storage, which other apps on a non-rooted device cannot
+read. No copy of it exists anywhere else.</p>
+
+<h2>Changes to this policy</h2>
+<p>If the policy changes, the date at the top changes with it. A sign-in option for
+backing up and syncing your data between devices is being considered but is
+<strong>not part of the app today</strong>; if it is ever added, this policy will be
+rewritten to describe it, and what is stored on a server, before that version ships.</p>
+
+<h2>Not medical advice</h2>
+<p>TrackEats is not a medical device. It does not diagnose, treat, cure or prevent any
+medical condition. Calorie estimates from a photograph are approximations, and BMI, BMR,
+TDEE, body-fat and ideal-weight figures are formulas applied to numbers you typed in, not
+measurements. Tips, diet plans and exercise suggestions are generated by a language model
+and may be wrong. Do not use any of it to make a medical decision; speak to a qualified
+professional.</p>
+
+<footer>
+  <p>Contact: <strong>vipillainewai99@gmail.com</strong></p>
+</footer>
+
+</main>
+</body>
+</html>
