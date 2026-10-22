@@ -4,43 +4,113 @@
 <title>Test Zig Drill</title>
 <meta name="description" content="Help test Zig Drill, a one-tap drilling game for Android.">
 <style>
-:root{--bg:#fbf8f1;--fg:#1d1a26;--muted:#5b5668;--accent:#b8741a;--card:#fff;--line:#e6dfd0;--btn:#f2b134;--btnfg:#1d1a26}
-@media (prefers-color-scheme:dark){:root{--bg:#120e22;--fg:#f7f1e3;--muted:#b3acc4;--accent:#f2b134;--card:#1c1731;--line:#2e2747;--btn:#f2b134;--btnfg:#120e22}}
+:root{--bg:#fbf8f1;--fg:#1d1a26;--muted:#5b5668;--accent:#b8741a;--card:#fff;--line:#e6dfd0;--btn:#f2b134;--btnfg:#1d1a26;--done:#2e9e5b;--warn:#fff3d6}
+@media (prefers-color-scheme:dark){:root{--bg:#120e22;--fg:#f7f1e3;--muted:#b3acc4;--accent:#f2b134;--card:#1c1731;--line:#2e2747;--btn:#f2b134;--btnfg:#120e22;--done:#45c47c;--warn:#2b2440}}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--fg);font:17px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0}
 main{max-width:34rem;margin:0 auto;padding:2rem 16px 3rem}
 h1{font-size:1.8rem;line-height:1.2;margin:0 0 .4rem}
-.lead{color:var(--muted);margin:0 0 1.6rem}
+.lead{color:var(--muted);margin:0 0 1.2rem}
+.banner{display:none;background:var(--warn);border:2px solid var(--accent);border-radius:14px;padding:1rem;margin:0 0 1.2rem}
+.banner p{margin:0 0 .8rem}
 ol{list-style:none;padding:0;margin:0;counter-reset:step}
-li{counter-increment:step;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.1rem 1.2rem;margin:0 0 .9rem}
+li{counter-increment:step;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:1.1rem;margin:0 0 .9rem;opacity:.55;transition:opacity .3s,border-color .3s}
+li.current{opacity:1;border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 20%,transparent)}
+li.done{opacity:.8;border-color:var(--done)}
 li h2{font-size:1.1rem;margin:0 0 .3rem;display:flex;gap:.6rem;align-items:center}
 li h2::before{content:counter(step);display:inline grid;place-items:center;width:1.8rem;height:1.8rem;border-radius:50%;background:var(--btn);color:var(--btnfg);font-size:1rem;flex:none}
+li.done h2::before{content:"✓";background:var(--done);color:#fff}
 li p{margin:.2rem 0 .9rem;color:var(--muted)}
-.btn{display:block;text-align:center;background:var(--btn);color:var(--btnfg);font-weight:700;text-decoration:none;padding:.95rem 1rem;border-radius:12px;font-size:1.05rem}
-.btn:active{transform:translateY(1px)}
+.btn{display:block;width:100%;text-align:center;background:var(--btn);color:var(--btnfg);font:700 1.05rem system-ui,sans-serif;text-decoration:none;padding:.95rem 1rem;border:0;border-radius:12px;cursor:pointer}
+li:not(.current) .btn{background:transparent;color:var(--fg);border:2px solid var(--line)}
+.skip{display:block;margin:.6rem auto 0;background:none;border:0;color:var(--accent);font:inherit;font-size:.9rem;text-decoration:underline;cursor:pointer}
+li:not(.current) .skip{display:none}
+.finish{display:none;text-align:center;font-weight:700;color:var(--done);margin:1rem 0}
 .note{border-left:4px solid var(--accent);padding:.2rem 0 .2rem .9rem;margin:1.6rem 0;color:var(--muted)}
 a{color:var(--accent)}
 </style></head><body><main>
 <h1>Help test Zig Drill</h1>
-<p class="lead">A one-tap drilling game for Android. Google needs a group of real testers to try it for 14 days before it can go on the Play Store. Thank you for helping!</p>
-<p class="lead">You need an <strong>Android phone or tablet</strong>. Do the steps in order, signed in with the same Google account your Play Store uses.</p>
+<p class="lead">A one-tap drilling game for Android. Google needs real testers for 14 days before it can go on the Play Store. Thank you for helping!</p>
+
+<div class="banner" id="inapp">
+  <p><strong>Open this page in Chrome first.</strong> WhatsApp's built-in browser isn't signed in to Google, so the steps below won't work in it.</p>
+  <a class="btn" id="openChrome" href="#">Open in Chrome</a>
+  <p style="margin:.8rem 0 0;font-size:.9rem">If nothing happens: tap ⋮ (top right) → <em>Open in Chrome</em>.</p>
+</div>
+<div class="banner" id="ios"><p><strong>This test needs an Android phone or tablet.</strong> iPhones can't join, sorry!</p></div>
+
+<p class="lead">Each button opens a Google page. Do what it says, then come back here and the next step lights up.</p>
 <ol>
-  <li>
+  <li id="s0">
     <h2>Join the tester group</h2>
-    <p>Opens Google Groups. Tap <strong>Join group</strong>.</p>
-    <a class="btn" href="https://groups.google.com/g/zig-drill-testers">Join the group</a>
+    <p>Tap <strong>Join group</strong> on the Google page, then come back.</p>
+    <a class="btn" data-step="0" target="_blank" rel="noopener" href="https://groups.google.com/g/zig-drill-testers">Join the group</a>
+    <button class="skip" data-skip="0">I've already joined</button>
   </li>
-  <li>
+  <li id="s1">
     <h2>Become a tester</h2>
-    <p>Tap <strong>Become a tester</strong>. If it says the app isn't available, wait a minute and try again.</p>
-    <a class="btn" href="https://play.google.com/apps/testing/io.github.vishnupillai99.zig_drill">Become a tester</a>
+    <p>Tap <strong>Become a tester</strong>. If it says the app isn't available, wait a minute and tap it again.</p>
+    <a class="btn" data-step="1" target="_blank" rel="noopener" href="https://play.google.com/apps/testing/io.github.vishnupillai99.zig_drill">Become a tester</a>
+    <button class="skip" data-skip="1">I'm already a tester</button>
   </li>
-  <li>
+  <li id="s2">
     <h2>Install Zig Drill</h2>
     <p>Opens the Play Store. Tap <strong>Install</strong>.</p>
-    <a class="btn" href="https://play.google.com/store/apps/details?id=io.github.vishnupillai99.zig_drill">Install from Google Play</a>
+    <a class="btn" data-step="2" href="https://play.google.com/store/apps/details?id=io.github.vishnupillai99.zig_drill">Install from Google Play</a>
   </li>
 </ol>
+<p class="finish" id="finish">All done, thank you! 🎉 Enjoy the game.</p>
 <p class="note">Please keep the game installed for 14 days and play it a few times. If testers leave early, Google restarts the count.</p>
 <p>Found a bug, or is it too easy or too hard? Tell us at <a href="mailto:vipillainewai99@gmail.com">vipillainewai99@gmail.com</a>. Privacy: <a href="../privacy/">Zig Drill privacy policy</a>.</p>
-</main></body></html>
+</main>
+<script>
+(function () {
+  var ua = navigator.userAgent || '';
+  var android = /Android/i.test(ua);
+  // In-app browsers (WhatsApp, Facebook, Instagram...) run in an Android WebView with no Google sign-in.
+  var inApp = android && (/WhatsApp|FBAN|FBAV|Instagram|Line\//i.test(ua) || /; wv\)/.test(ua));
+  if (/iPhone|iPad|iPod/i.test(ua)) document.getElementById('ios').style.display = 'block';
+  if (inApp) {
+    document.getElementById('inapp').style.display = 'block';
+    document.getElementById('openChrome').href =
+      'intent://' + location.host + location.pathname + '#Intent;scheme=https;package=com.android.chrome;end';
+  }
+
+  var KEY = 'zigdrill-test-step', step = 0, pending = -1;
+  try { step = Math.min(3, parseInt(localStorage.getItem(KEY), 10) || 0); } catch (e) {}
+
+  function show() {
+    for (var i = 0; i < 3; i++) {
+      var li = document.getElementById('s' + i);
+      li.className = i < step ? 'done' : i === step ? 'current' : '';
+    }
+    document.getElementById('finish').style.display = step >= 3 ? 'block' : 'none';
+    try { localStorage.setItem(KEY, String(step)); } catch (e) {}
+  }
+  function advance(to) {
+    if (to > step) { step = to; show(); }
+    var cur = document.getElementById('s' + Math.min(step, 2));
+    if (cur && cur.scrollIntoView) cur.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  document.querySelectorAll('[data-step]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var i = +a.getAttribute('data-step');
+      if (i === 2) { advance(3); return; } // the Play Store takes over from here
+      pending = i; // marked done when they come back to this page
+    });
+  });
+  document.querySelectorAll('[data-skip]').forEach(function (b) {
+    b.addEventListener('click', function () { advance(+b.getAttribute('data-skip') + 1); });
+  });
+  function back() {
+    if (document.visibilityState === 'visible' && pending >= 0) {
+      var i = pending; pending = -1; advance(i + 1);
+    }
+  }
+  document.addEventListener('visibilitychange', back);
+  window.addEventListener('focus', back);
+  show();
+})();
+</script>
+</body></html>
